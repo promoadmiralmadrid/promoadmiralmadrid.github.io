@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Permissions-Policy" content="interest-cohort=(), user-id=()" />
+    <title>Image Slideshow</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .slide {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; /* Start with all slides hidden */
+        }
+        .slide:nth-child(1) {
+            animation: fade 45s infinite 0s; /* Show the first slide */
+        }
+        .slide:nth-child(2) {
+            animation: fade 45s infinite 15s; /* Show the second slide after 5 seconds */
+        }
+        .slide:nth-child(3) {
+            animation: fade 45s infinite 30s; /* Show the third slide after 10 seconds */
+        }
+        .slide:nth-child(4) {
+            animation: fade 45s infinite 45s; /* Show the fourth slide after 15 seconds */
+        }
+        @keyframes fade {
+            0%, 20% {
+                opacity: 1; /* Start with the first slide visible */
+            }
+            25%, 40% {
+                opacity: 1;
+            }
+            45%, 100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Images -->
+    <img class="slide" src="image1.jpg" alt="Image 1">
+    <img class="slide" src="image2.jpg" alt="Image 2">
+    <img class="slide" src="image3.jpg" alt="Image 3">
+    <img class="slide" src="image4.jpg" alt="Image 4">
+</body>
+</html>
